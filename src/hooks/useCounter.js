@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-const useCounter = ( initialState = 10, factor = 1) => {
+const useCounter = ( initialState = 1, factor = 1) => {
 
     const [state, setState] = useState(initialState);
 
