@@ -23,13 +23,11 @@ export const useFetch = ( url ) => {
         then( ({id, name, sprites}) => {
             const sprite = sprites.front_default;
 
-            setTimeout(() => {
                 setState( {
                     data: {id, name, sprite},
                     loading: false,
                     error: null
-                })
-            }, 2000);
+                });
 
             
         })
