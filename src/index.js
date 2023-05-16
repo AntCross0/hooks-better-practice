@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Memorize from './Components/05-memos/Memorize';
+import MemoHook from './Components/05-memos/MemoHook';
+import CallbackHook from './Components/05-memos/CallbackHook';
+import { Padre } from './Components/07-tarea-memo/Padre';
 //import { FormWithCustomHook } from './Components/02-useEffect/FormWithCustomHook';
-import MultiComponents from './Components/03-examples/MultiComponents';
+//import MultiComponents from './Components/03-examples/MultiComponents';
+//import FocusScreen from './Components/04-useRef/FocusScreen';
+//import RealExampleRef from './Components/04-useRef/RealExampleRef';
 
   
 //import { HookApp } from './HookApp';
@@ -18,8 +24,14 @@ root.render(
   //<CounterCustomHook />
   //<SimpleForm />
   //<FormWithCustomHook />
+  //<MultiComponents />
+  //<FocusScreen />
+  //<RealExampleRef />
+  //<Memorize />
+  //<MemoHook />
+  //<CallbackHook />
     
   <div className='p-2'>
-    <MultiComponents />
+    <Padre />
   </div>
 );

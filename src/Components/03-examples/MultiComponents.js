@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFetch } from '../../hooks/useFetch';
 import useCounter from '../../hooks/useCounter';
+import './index.css';
 
 const MultiComponents = () => {
 
@@ -19,7 +20,7 @@ const MultiComponents = () => {
   return (
     <>
     {
-      loading ? <div className="transition-all border shadow rounded-xl p-4 max-w-sm w-full mx-auto overflow-hidden md:max-w-2xl">
+      loading ? <div className="card transition-all border shadow rounded-xl p-4 max-w-sm w-full mx-auto overflow-hidden md:max-w-2xl">
       <div className="animate-pulse flex space-x-4 md:flex">
         <div className="rounded bg-slate-200 h-48 w-48"></div>
         <div className="flex-1 space-y-6 py-1">
@@ -50,17 +51,17 @@ const MultiComponents = () => {
 
             {
               //disabled
-              id == 1 ? <button disabled='true' className='invisible cursor-not-allowed rounded shadow-md w-full mx-2 mt-3 py-2 px-auto bg-slate-300 text-slate-400 font-normal'
+              id == 1 ? <button disabled={true} className='invisible cursor-not-allowed rounded shadow-md w-full mx-2 mt-3 py-2 px-auto bg-slate-300 text-slate-400 font-normal'
               onClick={ decrement }
 
              > Previous Pokemon </button>:
 
              //enabled
-      <button disable='false' className='transition-all delay-150  cursor-pointer rounded shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-110 w-full mx-2 mt-3 py-2 px-auto bg-indigo-400 text-white font-semibold  hover:bg-red-400'
+      <button disabled={false} className='transition-all delay-150  cursor-pointer rounded shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-110 w-full mx-2 mt-3 py-2 px-auto bg-indigo-400 text-white font-semibold  hover:bg-red-400'
       onClick={ decrement }
 > Previous Pokemon </button>
             }
-            <button className='transition-all delay-150  cursor-pointer rounded shadow-md transition ease-in-out	hover:-translate-y-1 hover:scale-110 w-full mx-2 mt-3 py-2 px-auto bg-blue-400 text-white font-semibold  hover:bg-sky-500'
+            <button className='button-custom transition-all delay-150  cursor-pointer rounded shadow-md transition ease-in-out	hover:-translate-y-1 hover:scale-110 w-full mx-2 mt-3 py-2 px-auto bg-blue-400 text-white font-semibold  hover:bg-sky-500'
                     onClick={ increment }
             > Next Pokemon </button>
           </div>
