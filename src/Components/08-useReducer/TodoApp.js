@@ -1,28 +1,35 @@
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import { todoReducer } from './todoReducer'
 import '../../index.css';
+import { useForm } from '../../hooks/useForm';
 
-const initialState = [{
-    id: new Date().getTime(),
-    title: 'Aprender React',
-    desc: 'quiero aprender react para mañana.',
-    done: false,
-},
+const init = () => {
 
-];
+  return JSON.parse(localStorage.getItem('todos')) || []
+}
 
 const TodoApp = () => {
 
-    const [todos, dispatch] = useReducer( todoReducer, initialState);
+    const [todos, dispatch] = useReducer( todoReducer, [], init);
 
-    
+    const [{title,desc}, handleInputChange, reset] = useForm({
+      title: '',
+      desc: '',
+    }
+    );
+
+    useEffect( () => {
+      localStorage.setItem('todos', JSON.stringify( todos ));
+    },[todos]);
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newTodo = {
+        const newTodo = { 
           id: new Date().getTime(),
-          title: 'Aprender Node',
-          desc: 'quiero aprender node Para despues',
+          title: title,
+          desc: desc,
           done: false
         }
     
@@ -32,9 +39,8 @@ const TodoApp = () => {
         }
 
         dispatch(action);
+        reset();
     }
-
-    console.log(todos);
 
   return (
     <>
@@ -70,10 +76,11 @@ const TodoApp = () => {
                 group-hover:transition-all group-hover:-translate-x-4 delay-100 group-hover:visible
                 overflow-x-hidden hover:bg-gray-500 after:bg-green-400' 
                 >Completar
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                 className="w-5 h-5 delay-150 opacity-0 translate-x-6 transition-all group-hover:-translate-x-0 group-hover:opacity-100">
-                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" 
+                className="w-5 h-5 delay-150 opacity-0 translate-x-6 transition-all group-hover:-translate-x-0 group-hover:opacity-100">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
                 </svg>
+
 
                 </button>
 
@@ -83,12 +90,25 @@ const TodoApp = () => {
           ))
         }
 
-        <div className='bottom-0 sticky p-1 pt-3 bg-white border-t-2 my-2 flex justify-between'>
-          <form className='space-x-2'>
-            <input required={true} placeholder='Write the title...' className=' rounded border-2 p-2 w-2/5' type='text'></input>
-            <input placeholder='Write the description...' className=' rounded border-2 p-2 w-2/4' type='text'></input>
+        <div className='bottom-0 sticky p-2 bg-white border-t-2 my-2 flex flex-row gap-2 justify-item-stretch'>
+
+          <form onSubmit={handleSubmit}  className='space-x-2'>
+
+            <input required={true} placeholder='Write the title...' 
+            name='title'
+            onChange={handleInputChange}
+            value={title}
+            className='flex-1 transition-all ease-linear focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500  invalid:text-pink-600
+          focus:invalid:border-pink-500 focus:invalid:ring-pink-500 rounded border-2 p-2 w-2/6' type='text'></input>
+
+            <input placeholder='Write the description...'
+            name='desc'
+            onChange={handleInputChange}
+            value={desc}
+            className='flex-1 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 rounded border-2 p-2 w-2/4' type='text'></input>
+
+              <button className=' my-auto flex-none justify-self-end right-0 bg-green-400 text-white font-bold p-2 rounded hover:bg-green-500 w-16' type='submit'>Add</button>
           </form>
-          <button onClick={handleSubmit} className='bg-green-400 text-white font-bold p-2 rounded hover:bg-green-500 w-32' type='submit'>Add</button>
         </div>
       </div>
   </>
