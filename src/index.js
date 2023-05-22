@@ -33,9 +33,8 @@ root.render(
   //<CallbackHook />
   //<Padre />
     
-  <div className='p-2'>
-
-  <TodoApp />
-  </div>
+  <>
+    <TodoApp />
+  </>
 );
 

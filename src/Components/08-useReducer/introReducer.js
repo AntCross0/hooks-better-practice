@@ -1,10 +1,10 @@
 
 
-const initialState = {
+const initialState = [{
     id: 1,
     todo: 'Comprar mango',
     done: false
-}
+}];
 
 const todoReducer = ( state = initialState, action) => {
 

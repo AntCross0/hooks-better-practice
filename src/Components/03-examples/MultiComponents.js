@@ -37,7 +37,7 @@ const MultiComponents = () => {
     </div> :
       <div className="sm-max-w-60 transition translate-y-4 delay-150 max-w-md mx-auto bg-white rounded-xl shadow overflow-hidden md:max-w-2xl">
       <div className="md:flex ">
-        <div className="md:shrink-0 transition-all transition-transform hover:translate-x-4 duration-1000 ease-in-out">
+        <div className="md:shrink-0 transition-all hover:translate-x-4 duration-1000 ease-in-out">
           <img className="  h-48 w-full object-cover md:h-full md:w-48" draggable='false' src={sprite} alt={ name }/>
         </div>
         <div className="p-2 flex-1">
@@ -57,11 +57,11 @@ const MultiComponents = () => {
              > Previous Pokemon </button>:
 
              //enabled
-      <button disabled={false} className='transition-all delay-150  cursor-pointer rounded shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-110 w-full mx-2 mt-3 py-2 px-auto bg-indigo-400 text-white font-semibold  hover:bg-red-400'
+      <button disabled={false} className='transition-all delay-150  cursor-pointer rounded shadow-md ease-in-out hover:-translate-y-1 hover:scale-110 w-full mx-2 mt-3 py-2 px-auto bg-indigo-400 text-white font-semibold  hover:bg-red-400'
       onClick={ decrement }
 > Previous Pokemon </button>
             }
-            <button className='button-custom transition-all delay-150  cursor-pointer rounded shadow-md transition ease-in-out	hover:-translate-y-1 hover:scale-110 w-full mx-2 mt-3 py-2 px-auto bg-blue-400 text-white font-semibold  hover:bg-sky-500'
+            <button className='button-custom transition-all delay-150  cursor-pointer rounded shadow-md ease-in-out	hover:-translate-y-1 hover:scale-110 w-full mx-2 mt-3 py-2 px-auto bg-blue-400 text-white font-semibold  hover:bg-sky-500'
                     onClick={ increment }
             > Next Pokemon </button>
           </div>

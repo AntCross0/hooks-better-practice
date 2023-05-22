@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4010 2010">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #cbd5e1;
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        opacity: .25;
+      }
+    </style>
+  </defs>
+  <g id="svg2" class="cls-2">
+    <g id="layer1">
+      <path id="h0" class="cls-1" d="m5,5h4000"/>
+      <path id="h1" class="cls-1" d="m5,505h4000"/>
+      <path id="h2" class="cls-1" d="m5,1005h4000"/>
+      <path id="h3" class="cls-1" d="m5,1505h4000"/>
+      <path id="h4" class="cls-1" d="m5,2005h4000"/>
+      <path id="v0" class="cls-1" d="m5,5v2000"/>
+      <path id="v1" class="cls-1" d="m505,5v2000"/>
+      <path id="v2" class="cls-1" d="m1005,5v2000"/>
+      <path id="v3" class="cls-1" d="m1505,5v2000"/>
+      <path id="v4" class="cls-1" d="m2005,5v2000"/>
+      <path id="v5" class="cls-1" d="m2505,5v2000"/>
+      <path id="v6" class="cls-1" d="m3005,5v2000"/>
+      <path id="v7" class="cls-1" d="m3505,5v2000"/>
+      <path id="v8" class="cls-1" d="m4005,5v2000"/>
+    </g>
+  </g>
+</svg>
