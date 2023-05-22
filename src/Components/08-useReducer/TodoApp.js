@@ -8,38 +8,33 @@ const initialState = [{
     desc: 'quiero aprender react para mañana.',
     done: false,
 },
-{
-  id: 2,
-  title: 'Aprender React',
-  desc: 'quiero aprender react para mañana.',
-  done: false,
-},
-{
-  id: 1,
-  title: 'Aprender React',
-  desc: 'quiero aprender react para mañana.',
-  done: false,
-},
-{
-  id: 14,
-  title: 'Aprender React',
-  desc: 'quiero aprender react para mañana.',
-  done: false,
-},
-{
-  id: 3,
-  title: 'Aprender React',
-  desc: 'quiero aprender react para mañana.',
-  done: false,
-},
 
-
-]
-
+];
 
 const TodoApp = () => {
 
-    const [todos] = useReducer( todoReducer, initialState);
+    const [todos, dispatch] = useReducer( todoReducer, initialState);
+
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const newTodo = {
+          id: new Date().getTime(),
+          title: 'Aprender Node',
+          desc: 'quiero aprender node Para despues',
+          done: false
+        }
+    
+        const action = {
+          type: 'add',
+          payload: newTodo
+        }
+
+        dispatch(action);
+    }
+
+    console.log(todos);
 
   return (
     <>
@@ -47,7 +42,7 @@ const TodoApp = () => {
 
 
       <div className=' relative bg-slate-100 h-96 rounded max-w-[40%] mx-auto overflow-y-auto scroll-smooth'>
-        <h1 className='text-4xl font-bold mx-2 my-2'>Todo App</h1>
+        <h1 className='text-4xl font-bold mx-2 my-2'>Todo App ({ todos.length })</h1>
         <hr className='my-3 mx-2' />
         
 
@@ -88,12 +83,12 @@ const TodoApp = () => {
           ))
         }
 
-        <div className='sticky bottom-0 p-1 pt-3 bg-white border-t-2 my-2 flex justify-between'>
+        <div className='bottom-0 sticky p-1 pt-3 bg-white border-t-2 my-2 flex justify-between'>
           <form className='space-x-2'>
             <input required={true} placeholder='Write the title...' className=' rounded border-2 p-2 w-2/5' type='text'></input>
             <input placeholder='Write the description...' className=' rounded border-2 p-2 w-2/4' type='text'></input>
           </form>
-          <button className='bg-green-400 text-white font-bold p-2 rounded hover:bg-green-500 w-32' type='submit'>Add</button>
+          <button onClick={handleSubmit} className='bg-green-400 text-white font-bold p-2 rounded hover:bg-green-500 w-32' type='submit'>Add</button>
         </div>
       </div>
   </>
