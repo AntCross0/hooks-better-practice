@@ -9,13 +9,13 @@ const initialState = [{
     done: false,
 },
 {
-  id: new Date().getTime(),
+  id: 2,
   title: 'Aprender React',
   desc: 'quiero aprender react para mañana.',
   done: false,
 },
 {
-  id: new Date().getTime(),
+  id: 1,
   title: 'Aprender React',
   desc: 'quiero aprender react para mañana.',
   done: false,
@@ -57,10 +57,11 @@ const TodoApp = () => {
                    group-hover:text-slate-200 ">{todo.desc}</p>
                 </div>
 
-                <a href='#'className=' my-auto bg-green-400 text-white rounded p-1 flex gap-2 font-medium justify-between items-center visible
+                <a href='#'className=' my-auto bg-green-400 text-white rounded p-1 flex gap-2 font-medium justify-between items-center 
+                invisible
                 group-hover:transition-all group-hover:-translate-x-4 delay-100 group-hover:visible
                 overflow-x-hidden ' 
-                >Completar  
+                >Completar
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                  className="w-5 h-5 delay-150 opacity-0 translate-x-6 transition-all group-hover:-translate-x-0 group-hover:opacity-100">
                   <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
