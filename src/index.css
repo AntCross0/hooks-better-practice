@@ -15,3 +15,7 @@ body {
 #root{
     
 }
+
+.completed{
+    @apply line-through !important
+}
