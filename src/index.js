@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import TodoApp from './Components/08-useReducer/TodoApp';
+import MainApp from './Components/09-useContext/MainApp';
+
+//import TodoApp from './Components/08-useReducer/TodoApp';
 //import Memorize from './Components/05-memos/Memorize';
 //import MemoHook from './Components/05-memos/MemoHook';
 //import CallbackHook from './Components/05-memos/CallbackHook';
@@ -32,9 +34,10 @@ root.render(
   //<MemoHook />
   //<CallbackHook />
   //<Padre />
-    
+  //<TodoApp />
+
   <>
-    <TodoApp />
+    <MainApp />
   </>
 );
 
