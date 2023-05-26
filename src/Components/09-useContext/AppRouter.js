@@ -10,6 +10,7 @@ import AboutMePage from './AboutMePage';
 import LoginPage from './LoginPage';
 import HomePage from './HomePage';
 import NavBar from './NavBar';
+import Error404Page from './Error404Page';
 
 
 const AppRouter = () => {
@@ -19,9 +20,10 @@ const AppRouter = () => {
                 <NavBar />
                 <div>
                     <Routes>
-                        <Route exact path='/' Component={HomePage} />
-                        <Route exact path='/about' Component={AboutMePage} />
-                        <Route exact path='/login' Component={LoginPage} />
+                        <Route exact="true" path='/' Component={HomePage} />
+                        <Route exact="true" path='/about' Component={AboutMePage} />
+                        <Route exact="true" path='/login' Component={LoginPage} />
+                        <Route path='*' Component={Error404Page} />
                     </Routes>
                 </div>
             </Router>

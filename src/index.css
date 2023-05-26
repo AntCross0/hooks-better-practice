@@ -22,3 +22,7 @@ body {
 .completed .properties p {
     @apply text-slate-500 line-through !important
 } */
+
+.active {
+    @apply ring-4 ring-sky-500 !important;
+}
